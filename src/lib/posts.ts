@@ -4,6 +4,7 @@ export interface Post {
     id: number,
     title: string,
     body: string,
+    likes: number
 }
 
 function delay(ms: number): Promise<void> {

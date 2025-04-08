@@ -3,7 +3,7 @@
 import {createPost} from "@/lib/posts";
 import React, {useState} from "react";
 import {redirect} from "next/navigation";
-import PostEditForm from "@/components/PostEditForm";
+import PostForm from "@/components/PostForm";
 
 export default function WritePage() {
   async function handleSubmit(title: string, body: string) {
@@ -13,7 +13,7 @@ export default function WritePage() {
 
   return (
     <>
-      <PostEditForm onSubmit={handleSubmit}></PostEditForm>
+      <PostForm onSubmit={handleSubmit}></PostForm>
     </>
   )
 

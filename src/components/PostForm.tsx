@@ -7,7 +7,7 @@ interface PostEditFormProps {
 }
 
 
-export default function PostEditForm({initialTitle, initialBody, onSubmit}: PostEditFormProps) {
+export default function PostForm({initialTitle, initialBody, onSubmit}: PostEditFormProps) {
   const [title, setTitle] = useState(initialTitle || '')
   const [body, setBody] = useState(initialBody || '')
 

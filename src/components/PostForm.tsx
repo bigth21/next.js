@@ -18,8 +18,8 @@ export default function PostForm({initialTitle, initialBody, onSubmit}: PostForm
 
   return <>
     <form onSubmit={handleSubmit}>
-      <input type="text" id={"title"} name={"title"} onChange={(e) => setTitle(e.target.value)}/>
-      <input type="text" id={"body"} name={"body"} onChange={(e) => setBody(e.target.value)}/>
+      <input type="text" id={"title"} name={"title"} value={title} onChange={(e) => setTitle(e.target.value)}/>
+      <input type="text" id={"body"} name={"body"} value={body} onChange={(e) => setBody(e.target.value)}/>
       <button type={"submit"}>Create</button>
     </form></>
 }

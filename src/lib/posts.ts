@@ -12,18 +12,21 @@ function delay(ms: number): Promise<void> {
 }
 
 export async function createPost(title: string, body: string): Promise<number> {
-    const response = await axios.post('http://localhost:3000/api/posts', {title, body})
+    const response = await axios.post('http://localhost:3001/api/posts', {title, body})
     return response.data;
 }
 
-
 export async function getPosts(): Promise<Post[]> {
     await delay(1000);
-    const response = await axios.get('http://localhost:3000/api/posts')
+    const response = await axios.get('http://localhost:3001/api/posts')
     return response.data
 }
 
 export async function getPost(id: number): Promise<Post> {
-    const response = await axios.get(`http://localhost:3000/api/posts/${id}`)
+    const response = await axios.get(`http://localhost:3001/api/posts/${id}`)
     return response.data
+}
+
+export async function updatePost(id: number, title: string, body: string): Promise<void> {
+    await axios.put(`http://localhost:3001/api/posts/${id}`, {title, body})
 }

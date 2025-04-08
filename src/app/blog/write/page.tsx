@@ -1,7 +1,7 @@
 'use client'
 
 import {createPost} from "@/lib/posts";
-import React, {useState} from "react";
+import React from "react";
 import {redirect} from "next/navigation";
 import PostForm from "@/components/PostForm";
 
@@ -16,5 +16,4 @@ export default function WritePage() {
       <PostForm onSubmit={handleSubmit}></PostForm>
     </>
   )
-
 }

@@ -3,22 +3,18 @@
 import {createPost} from "@/lib/posts";
 import React, {useState} from "react";
 import {redirect} from "next/navigation";
+import PostEditForm from "@/components/PostEditForm";
 
 export default function WritePage() {
-  const [title, setTitle] = useState('')
-  const [body, setBody] = useState('')
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-
+  async function handleSubmit(title: string, body: string) {
     const id = await createPost(title, body)
     redirect(`/blog/${id}`)
   }
 
-  return <>
-    <form onSubmit={handleSubmit}>
-      <input type="text" id={"title"} name={"title"} onChange={(e) => setTitle(e.target.value)}/>
-      <input type="text" id={"body"} name={"body"} onChange={(e) => setBody(e.target.value)}/>
-      <button type={"submit"}>Create</button>
-    </form></>
+  return (
+    <>
+      <PostEditForm onSubmit={handleSubmit}></PostEditForm>
+    </>
+  )
+
 }

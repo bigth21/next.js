@@ -1,13 +1,13 @@
 import React, {useState} from "react";
 
-interface PostEditFormProps {
+interface PostFormProps {
   initialTitle?: string;
   initialBody?: string;
   onSubmit: (title: string, body: string) => void;
 }
 
 
-export default function PostForm({initialTitle, initialBody, onSubmit}: PostEditFormProps) {
+export default function PostForm({initialTitle, initialBody, onSubmit}: PostFormProps) {
   const [title, setTitle] = useState(initialTitle || '')
   const [body, setBody] = useState(initialBody || '')
 
